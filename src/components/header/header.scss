@@ -1,0 +1,53 @@
+.header {
+  height: 200px;
+  width: 100%;
+ background-color: rgb(104, 151 ,113);
+ display: flex;
+ justify-content: space-around;ç
+ &__teach-learn{
+display: flex;
+justify-content: space-between;
+ }
+&__logo{
+
+  width: 150px;
+  height: 120px;
+}
+&__button-go{
+   background-color: rgb(124, 60, 60);
+   padding: 3px;
+   border-radius: 50%;
+}
+&__button-signin{
+  padding: 5px;
+  background-color: rgb(124, 60, 60);
+  color: white;
+  border-radius: 5px;
+}
+
+&__learn a{
+  text-decoration: none;
+  color: white  ;
+}
+&__teach a{
+  text-decoration: none;
+  color: white  ;
+}
+}
+.form{
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+ 
+  input{
+    width: 100px;
+    height: 25px;
+    border-radius: 15px;
+  }
+  
+  &__title-login{
+    color: black;
+    font-weight:700;
+  }
+  
+}

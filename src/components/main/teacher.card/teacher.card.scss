@@ -1,0 +1,25 @@
+.teacher-card{
+  height: 120px;
+  width: 500px;
+  display: flex;
+  background-color: rgb(25, 78,71);
+  justify-content: space-around;
+  padding: 30px;
+  
+
+  &__chef{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+  }
+  &__plate{
+     width: 100px;
+    height: 100px;
+    
+  }
+  &__text{
+    color: white;
+    margin: 20px;
+  }
+}
