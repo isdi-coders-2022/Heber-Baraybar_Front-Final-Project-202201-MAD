@@ -1,25 +1,73 @@
 .teacher-card{
-  height: 120px;
-  width: 500px;
+  width: 600px;
+  height:auto;
   display: flex;
   background-color: rgb(25, 78,71);
-  justify-content: space-around;
-  padding: 30px;
-  
-
-  &__chef{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-
-  }
-  &__plate{
-     width: 100px;
-    height: 100px;
-    
-  }
-  &__text{
+ border-radius: 20px;
+ 
+ &__chef{
+   display: flex;
+   align-items: center;
+   margin: 30px;
+ }
+ &__chef img{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   
+   
+ }
+ &__button{
+   display: flex;
+   justify-content: space-around;
+ }
+  &__button button{
+    padding: 10px;
+    background-color: rgb(110, 69, 69);
     color: white;
-    margin: 20px;
+    border-radius: 10px;
   }
 }
+
+.group1{
+  display: flex;
+  justify-content: space-around;
+  &__data-teacher{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__price{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.group2{
+  display: flex;
+  justify-content: space-evenly;
+ 
+ &__star{
+   display: flex;
+   align-items: center;
+ }
+}
+.group3{
+  display: flex;
+  justify-content: space-around;
+ 
+  
+}
+
+
+
+
+
+ .group3__text{
+    color: white;
+   font-size: 14px;
+   margin: 10px;
+  }
+  h2{
+    font-size: 20px;
+  }
