@@ -1,9 +1,8 @@
 import React from 'react';
-import './main.scss';
-import Works from './works/how.works';
-import TeacherCard from './teacher.card/teacher.card';
-import ButtonMeet from './button.meet/button.meet.our.chefs';
-import FavoriteCard from '../card.teacher.favorites';
+import './Home.scss';
+import Works from '../works/how.works';
+import TeacherCard from '../teacher.card/teacher.card';
+import ButtonMeet from '../button.meetOurChef/button.meet.our.chefs';
 
 function Main(): JSX.Element {
   return (
@@ -19,7 +18,7 @@ function Main(): JSX.Element {
       </div>
       <span className="main__couple"><img src="https://firebasestorage.googleapis.com/v0/b/kukify.appspot.com/o/online-couple.jpg?alt=media&token=62d5ce97-65fd-4298-94ac-3e90e2f3e69c" alt="" /></span>
       <ButtonMeet />
-      <FavoriteCard />
+
     </div>
 
   );

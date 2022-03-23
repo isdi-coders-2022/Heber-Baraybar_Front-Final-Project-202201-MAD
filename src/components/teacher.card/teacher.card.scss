@@ -2,33 +2,54 @@
   width: 600px;
   height:auto;
   display: flex;
+  padding: 50px;
   background-color: rgb(25, 78,71);
- border-radius: 20px;
+  border-radius: 20px;
 
- 
- &__chef{
-   display: flex;
-   align-items: center;
-   margin: 30px;
- }
- &__chef img{
-   width: 80px;
+&__data img {
+  width: 80px;
    height: 80px;
    border-radius: 50%;
+   border-style: double;
    
-   
+}
+ &__data-name{
+   display: flex;
+   justify-content: center;
+   gap: 5px;
+   align-items: center;
  }
+ &__data-name h2{
+   font-size: 15px;
+ }
+
  &__button{
    display: flex;
    justify-content: space-around;
  }
   &__button button{
-    padding: 10px;
-    width: 100px;
+    padding: 5px;
+    width: 80px;
     background-color: rgb(110, 69, 69);
     color: white;
     border-radius: 10px;
    
+  }
+  &__details-text{
+    color: white;
+    padding: 20px;
+  }
+  &__details-habilities{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h2{
+      font-size: 20px;
+    }
+    p{
+      font-size: 14px;
+    }
   }
 }
 
@@ -58,13 +79,11 @@
  }
 }
 .group3{
-  background-color: red;
+
   display: flex;
-  justify-content: space-between;
- &__text{
-   font-size: 10px;
-   padding: 0 0 0 10px;
- }
+  justify-content: center;
+  align-items: center;
+ 
   
 }
 
@@ -72,11 +91,3 @@
 
 
 
- .group3__text{
-    color: white;
-   font-size: 14px;
-   margin: 10px;
-  }
-  h2{
-    font-size: 14px;
-  }
