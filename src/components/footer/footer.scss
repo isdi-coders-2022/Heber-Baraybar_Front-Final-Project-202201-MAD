@@ -1,0 +1,17 @@
+.footer{
+  background-color: black;
+  height: 200px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  align-items: center;
+&__learn a{
+  text-decoration: none;
+  color: white;
+}
+&__teach a{
+  text-decoration: none;
+  color: white;
+}
+}
