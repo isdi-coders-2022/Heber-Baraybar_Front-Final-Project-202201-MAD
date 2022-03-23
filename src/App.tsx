@@ -7,7 +7,7 @@ import Home from './components/main/Home';
 import Register from './components/register/register';
 import Favorites from './components/favorites/favorites';
 import Teachers from './components/allTeachers/Teachers';
-import Book from './book/book';
+import Book from './components/book/book';
 
 function App(): JSX.Element {
   return (
@@ -20,7 +20,6 @@ function App(): JSX.Element {
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/teacher/favorite" element={<Favorites />} />
           <Route path="/booking" element={<Book />} />
-
         </Routes>
         <Footer />
       </div>

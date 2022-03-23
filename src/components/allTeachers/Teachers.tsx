@@ -12,10 +12,10 @@ function Teachers(): JSX.Element {
         <TeacherCard />
         <TeacherCard />
       </div>
-      <span className="allTeachers__button"><button type="submit">Your Teachers</button></span>
-
+      <span className="allTeachers__button">
+        <button type="submit">Your Teachers</button>
+      </span>
     </div>
-
   );
 }
 export default Teachers;

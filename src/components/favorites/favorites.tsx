@@ -7,9 +7,10 @@ function Favorites(): JSX.Element {
     <div className="favorite">
       <h2>Your favorites teachers</h2>
       <FavoriteCard />
-      <button type="submit">PURCHASE OUR BONUS AND GET ONE CLASS FOR FREE</button>
+      <button type="submit">
+        PURCHASE OUR BONUS AND GET ONE CLASS FOR FREE
+      </button>
     </div>
-
   );
 }
 

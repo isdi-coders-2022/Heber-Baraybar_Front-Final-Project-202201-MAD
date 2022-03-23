@@ -13,7 +13,6 @@ function StudentRegister(): JSX.Element {
       <input type="text" placeholder="tell us something about yourself" />
       <button type="submit">SUBMIT</button>
     </form>
-
   );
 }
 export default StudentRegister;
