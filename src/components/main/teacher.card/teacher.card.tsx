@@ -36,11 +36,12 @@ function TeacherCard(): JSX.Element {
             Hi my name`s John i love cooking
             i will teach my secrets receipes.
           </p>
-          <span className="group3__book" />
+          <span>heart</span>
+
         </div>
+
         <span className="teacher-card__button">
           <button type="submit">Book</button>
-          <span>heart</span>
         </span>
       </div>
     </div>
