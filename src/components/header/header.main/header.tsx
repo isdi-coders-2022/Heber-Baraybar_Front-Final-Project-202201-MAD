@@ -2,7 +2,7 @@ import React from 'react';
 import './header.scss';
 import FormLoginHeader from '../login/form.login.header';
 
-function Header(): JSX.Element {
+function Header() {
   return (
     <header className="header">
       <div className="header__logo">
@@ -25,6 +25,12 @@ function Header(): JSX.Element {
         <button type="submit" className="header__button-signin">
           SIGN IN
         </button>
+      </div>
+      <div className="header__table">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/kukify.appspot.com/o/mesa.jpg?alt=media&token=07045626-51be-4e1a-a278-78af7bd5a202"
+          alt=""
+        />
       </div>
     </header>
   );

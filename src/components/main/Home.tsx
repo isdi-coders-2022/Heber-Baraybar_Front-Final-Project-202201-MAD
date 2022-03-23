@@ -4,15 +4,15 @@ import Works from '../works/how.works';
 import TeacherCard from '../teacher.card/teacher.card';
 import ButtonMeet from '../button.meetOurChef/button.meet.our.chefs';
 
-function Main(): JSX.Element {
+function Main() {
   return (
     <div className="main">
-      <span className="main__friends">
+      {/* <span className="main__friends">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/kukify.appspot.com/o/amigos-cocinando-3.jpg?alt=media&token=5b1913f9-1b18-4215-8aea-c2e030ed46fa"
+          src="https://firebasestorage.googleapis.com/v0/b/kukify.appspot.com/o/mesa.jpg?alt=media&token=07045626-51be-4e1a-a278-78af7bd5a202"
           alt=""
         />
-      </span>
+      </span> */}
       <h1>Have fun and learn with native cooks</h1>
       <Works />
       <div className="teacher-presentation">
