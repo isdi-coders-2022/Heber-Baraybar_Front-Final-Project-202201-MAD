@@ -7,7 +7,9 @@ function FormLoginHeader(): JSX.Element {
       <p className="form__title-login">LOGIN</p>
       <input type="name" placeholder="name" />
       <input type="password" placeholder="password" />
-      <button type="submit" className="form__button-go">GO</button>
+      <button type="submit" className="form__button-go">
+        GO
+      </button>
     </div>
   );
 }

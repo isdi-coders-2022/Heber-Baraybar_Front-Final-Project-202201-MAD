@@ -1,47 +1,43 @@
 .header {
   height: 200px;
   width: 100%;
- background-color: rgb(104, 151 ,113);
- display: flex;
- justify-content: space-around;
- &__logo{
-   display: flex;
-   align-items: center;
- }
- &__logo img{
-
-  width: 150px;
-  height: 120px;
-}
- &__teach-learn{
-
-  padding: 30px;
-display: flex;
-justify-content: space-between;
-
- }
-
-&__learn a{
-  text-decoration: none;
-  color: white;
-  margin-right: 30px;
-  cursor: pointer;
-}
-&__teach a{
-  text-decoration: none;
-  color: white  ;
-}
-  &__teach-learn a{
- text-decoration: none;
-  color: white  ;
+  background-color: rgb(104, 151, 113);
+  display: flex;
+  justify-content: space-around;
+  &__logo {
+    display: flex;
+    align-items: center;
   }
-  &__button-signin{
-  padding: 5px;
-  background-color: rgb(124, 60, 60);
-  color: white;
-  border-radius: 5px;
-  margin-top: 20px;
-  cursor: pointer;
-}
+  &__logo img {
+    width: 150px;
+    height: 120px;
+  }
+  &__teach-learn {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  &__learn a {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  &__teach a {
+    text-decoration: none;
+    color: white;
+  }
+  &__teach-learn a {
+    text-decoration: none;
+    color: white;
+  }
+  &__button-signin {
+    padding: 5px;
+    background-color: rgb(124, 60, 60);
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
 }

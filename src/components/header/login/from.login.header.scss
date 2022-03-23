@@ -1,27 +1,25 @@
-.form{
+.form {
   display: flex;
   justify-content: space-between;
   height: 20px;
   align-items: center;
   margin-top: 50px;
- input{
-      width: 100px;
-      height: 25px;
-      border-radius: 10px;
-      margin: 10px;
-    }
-  &__title-login{
+
+  &__title-login {
     color: black;
-    font-weight:700;
-    
+    font-weight: 700;
   }
- 
-  
-  &__button-go{
-   background-color: rgb(124, 60, 60);
-   padding: 10px;
-   border-radius: 50%;
-   cursor: pointer;
-  
+
+  &__button-go {
+    background-color: rgb(124, 60, 60);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
   }
-  }
+}
+.form input {
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  margin: 10px;
+}

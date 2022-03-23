@@ -1,0 +1,24 @@
+.form-register-teacher {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.form-register-teacher input {
+  border-radius: 5px;
+  width: 600px;
+  height: 25px;
+}
+.form-register-teacher button {
+  background-color: rgb(126, 53, 53);
+  color: white;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px auto;
+}
+.form-register-teacher h2 {
+  font-size: 25px;
+}

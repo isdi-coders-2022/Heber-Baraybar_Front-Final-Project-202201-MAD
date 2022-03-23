@@ -4,7 +4,6 @@ import './footer.scss';
 function Footer(): JSX.Element {
   return (
     <div className="footer">
-
       <div className="footer__contact">
         <h3>CONTACT</h3>
         <p>Viriato 20</p>
@@ -14,15 +13,27 @@ function Footer(): JSX.Element {
       </div>
       <div className="footer__learn">
         <h3>WANT TO LEARN</h3>
-        <p><a href="#s">How it works?</a></p>
-        <p><a href="#s">How much we charge?</a></p>
-        <p><a href="#s">Leave a review</a></p>
+        <p>
+          <a href="#s">How it works?</a>
+        </p>
+        <p>
+          <a href="#s">How much we charge?</a>
+        </p>
+        <p>
+          <a href="#s">Leave a review</a>
+        </p>
       </div>
       <div className="footer__teach">
         <h3>WANT TO TEACH</h3>
-        <p><a href="#s">How it works?</a></p>
-        <p><a href="#s">How much we charge?</a></p>
-        <p><a href="#s">Leave a review</a></p>
+        <p>
+          <a href="#s">How it works?</a>
+        </p>
+        <p>
+          <a href="#s">How much we charge?</a>
+        </p>
+        <p>
+          <a href="#s">Leave a review</a>
+        </p>
       </div>
     </div>
   );

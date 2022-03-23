@@ -1,8 +1,46 @@
-.form-favorites{
-  &__img{
+.card-favorite {
+  width: 150px;
+  height: auto;
+  margin: 20px;
+  &__img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    border-style: double;
   }
-  
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  &__languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  &__languages p {
+    font-size: 14px;
+  }
+  &__book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.card-favorite button {
+  width: 80px;
+  cursor: pointer;
+  background-color: rgb(126, 82, 82);
+  color: white;
+  border-radius: 20px;
+}
+.card-favorite span {
+  width: 15px;
+  cursor: pointer;
+}
+.card-favorite h3 {
+  font-size: 18px;
 }

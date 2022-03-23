@@ -1,0 +1,37 @@
+h1 {
+  margin-top: 50px;
+}
+
+.main {
+  background-color: rgb(216, 203, 203);
+  &__friends img {
+    width: 900px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  &__couple img {
+    margin: 100px;
+    width: 800px;
+    height: 400px;
+  }
+}
+.teacher-presentation {
+  padding-top: 100px;
+  margin: 50px;
+  display: flex;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__calendary {
+    display: flex;
+    align-items: center;
+    img {
+      width: 600px;
+      height: auto;
+    }
+  }
+}
