@@ -10,9 +10,10 @@ function TeacherCard(): JSX.Element {
         <div className="teacher-card__data-name">
           <h2>Concha</h2>
           <span>🚩</span>
+          <span>13/h</span>
         </div>
-        <span>⭐5</span>
 
+        <span>⭐5</span>
       </div>
 
       <div className="teacher-card__details">
@@ -20,17 +21,22 @@ function TeacherCard(): JSX.Element {
           Hi my name`s John i love cooking
           i will teach my secrets receipes.
         </p>
-        <div className="teacher-card__details-habilities">
-          <div className="group2__speciality">
+        <div className="teacher-card__habilities">
+          <div className="teacher-card__habilities-speciality">
             <h2>Speciality</h2>
             <p>Marroccan Food</p>
           </div>
-          <div className="group2__languages">
+          <div className="teacher-card__habilities-languages">
             <h2>Speaks</h2>
             <p>English, Arabic</p>
+
           </div>
         </div>
-        <button type="submit">Book</button>
+        <div className="teacher-card__habilities-book">
+          <button type="submit">Book</button>
+          <span>🖤</span>
+        </div>
+
       </div>
 
     </div>

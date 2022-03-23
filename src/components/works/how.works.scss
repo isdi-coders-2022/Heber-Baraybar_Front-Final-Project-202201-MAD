@@ -1,13 +1,12 @@
 .works{
 
-  background-color: rgb(25,78,71);
-  height: 200px;
+  border-style: double;
+  height: auto;
   width: 400px;
+  padding: 20px;
 margin: 30px auto;
   text-align: center;
-  color: white;
+  color: rgb(71, 56, 56);
   border-radius: 10px;
-  &__title{
-    padding-top: 20px;
-  }
+  
 }

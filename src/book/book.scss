@@ -1,0 +1,45 @@
+.book{
+  &__title{
+    margin: 50px auto;
+  }
+  &__teacher{
+    display: flex;
+    justify-content: center;
+  }
+&__title-calendary{
+ 
+  margin-top: 80px;
+}
+&__calendary img{
+  margin-top: 30px;
+   width: 600px;
+  height: auto;
+}
+&__payment{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 100px;
+}
+}
+
+
+
+
+
+
+
+//   padding: 100px;
+//   &__teacher{
+//     margin-top: 100px;
+//     display: flex;
+    
+//     justify-content: center;
+  
+//   }
+//   &__calendary{
+//     display: flex;
+//     justify-content: center;
+   
+//   }
+// }

@@ -1,9 +1,9 @@
 .teacher-card{
-  width: 600px;
-  height:auto;
+  width: 500px;
+  height:180px;
   display: flex;
-  padding: 50px;
-  background-color: rgb(25, 78,71);
+  padding: 10px;
+  background-color: rgb(167, 114, 114);
   border-radius: 20px;
 
 &__data img {
@@ -22,27 +22,17 @@
  &__data-name h2{
    font-size: 15px;
  }
-
- &__button{
-   display: flex;
-   justify-content: space-around;
- }
-  &__button button{
-    padding: 5px;
-    width: 80px;
-    background-color: rgb(110, 69, 69);
-    color: white;
-    border-radius: 10px;
-   
-  }
   &__details-text{
     color: white;
     padding: 20px;
+    font-size: 14px;
   }
-  &__details-habilities{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+&__habilities{
+  display: flex;
+  justify-content: space-around;
+}
+
+  &__habilities-speciality{
 
     h2{
       font-size: 20px;
@@ -51,41 +41,38 @@
       font-size: 14px;
     }
   }
-}
+    &__habilities-languages{
+    
 
-.group1{
-  display: flex;
-  justify-content: space-around;
-  &__data-teacher{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
+    h2{
+      font-size: 20px;
+    }
+    p{
+      font-size: 14px;
+    }
   }
-  &__price{
-    display: flex;
-    align-items: center;
-  }
-}
-
-.group2{
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 12px;
- 
- &__star{
-   display: flex;
-   align-items: center;
- }
-}
-.group3{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
+    &__details button{
+   
+    padding: 5px;
+    width: 80px;
+    background-color: rgb(110, 69, 69);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    }
+   &__habilities-book{
+        margin-top: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 90px;
+   }
   
+ 
 }
+
+
+
 
 
 
