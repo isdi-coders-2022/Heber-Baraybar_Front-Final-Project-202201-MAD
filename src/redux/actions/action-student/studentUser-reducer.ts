@@ -5,7 +5,14 @@ const initialState = {
   token: '',
   userName: '',
   id: '',
+  email: '',
+  country: [],
+  city: '',
+  languages: [],
+  comment: '',
+  password: '',
   favorites: [],
+  reviews: '',
   isLogged: false,
 };
 

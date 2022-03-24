@@ -2,9 +2,20 @@ import { AnyAction } from '@reduxjs/toolkit';
 import actionTypesTeacher from './action-types-teacher';
 
 const initialState = {
-  token: '',
   userName: '',
   id: '',
+  email: '',
+  country: [],
+  city: '',
+  languages: [],
+  speciality: [],
+  price: '',
+  image: '',
+  video: '',
+  comment: '',
+  password: '',
+  reviews: '',
+  studentBooked: [],
   isLogged: false,
 };
 
