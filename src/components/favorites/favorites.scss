@@ -1,5 +1,10 @@
 .favorite {
   background-color: rgb(197, 192, 192);
+  padding-top: 150px;
+  &__card {
+    display: flex;
+    justify-content: center;
+  }
 }
 .favorite h2 {
   font-size: 30px;

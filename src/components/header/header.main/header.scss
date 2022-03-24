@@ -4,6 +4,7 @@
   background-color: rgb(104, 151, 113);
   display: flex;
   justify-content: space-around;
+  position: relative;
   &__logo {
     display: flex;
     align-items: center;
@@ -13,15 +14,16 @@
     height: 120px;
   }
   &__teach-learn {
-    padding: 30px;
     display: flex;
+    align-items: flex-start;
+    padding-top: 40px;
     justify-content: space-between;
+    gap: 100px;
   }
 
   &__learn a {
     text-decoration: none;
     color: white;
-    margin-right: 30px;
     cursor: pointer;
   }
   &__teach a {
@@ -39,5 +41,16 @@
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+  }
+  &__table {
+    position: absolute;
+    width: 700px;
+    height: 250px;
+    top: 90px;
+    z-index: 1;
+  }
+  &__table img {
+    width: 100%;
+    height: 100%;
   }
 }

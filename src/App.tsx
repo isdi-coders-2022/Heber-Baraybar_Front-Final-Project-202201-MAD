@@ -9,7 +9,7 @@ import Favorites from './components/favorites/favorites';
 import Teachers from './components/allTeachers/Teachers';
 import Book from './components/book/book';
 
-function App(): JSX.Element {
+function App() {
   return (
     <BrowserRouter>
       <div className="App">

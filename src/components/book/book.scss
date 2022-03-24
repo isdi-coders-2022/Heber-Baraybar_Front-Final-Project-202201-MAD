@@ -1,4 +1,6 @@
 .book {
+  padding-top: 120px;
+  background-color: rgb(211, 204, 204);
   &__title {
     margin: 50px auto;
   }
@@ -18,7 +20,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 100px;
+    padding: 100px;
   }
 }
 
