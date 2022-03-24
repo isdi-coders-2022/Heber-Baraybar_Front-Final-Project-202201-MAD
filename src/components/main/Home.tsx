@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.scss';
 import Works from '../works/how.works';
 import TeacherCard from '../teacher.card/teacher.card';
+import { getAllTeachers } from '../../services/api';
 import ButtonMeet from '../button.meetOurChef/button.meet.our.chefs';
 
 function Main() {
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    getAllTeachers().then((resp) => {
+      console.log(resp.data);
+      setTeachers(resp.data);
+    });
+  }, []);
+
   return (
     <div className="main">
-      {/* <span className="main__friends">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/kukify.appspot.com/o/mesa.jpg?alt=media&token=07045626-51be-4e1a-a278-78af7bd5a202"
-          alt=""
-        />
-      </span> */}
       <h1>Have fun and learn with native cooks</h1>
       <Works />
       <div className="teacher-presentation">
         <div className="teacher-presentation__cards">
-          <TeacherCard />
-          <TeacherCard />
+          {teachers.map(
+            (item, index) => index <= 2 && <TeacherCard teacher={item} />
+          )}
         </div>
         <span className="teacher-presentation__calendary">
           <img
