@@ -1,7 +1,7 @@
 import React from 'react';
 import './from.login.header.scss';
 
-function FormLoginHeader(): JSX.Element {
+function FormLoginHeader() {
   return (
     <div className="form">
       <p className="form__title-login">LOGIN</p>
