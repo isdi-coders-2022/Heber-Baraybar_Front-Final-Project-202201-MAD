@@ -1,14 +1,12 @@
 import React from 'react';
-import TeacherCard from '../teacher.card/teacher.card';
+// import TeacherCard from '../teacher.card/teacher.card';
 import './book.scss';
 
 function Book(): JSX.Element {
   return (
     <div className="book">
       <h2 className="book__title">BOOK YOUR CLASS</h2>
-      <span className="book__teacher">
-        <TeacherCard />
-      </span>
+      <span className="book__teacher">{/* <TeacherCard /> */}</span>
 
       <h3 className="book__title-calendary">
         THE SCHEDULLE IS SHOWN IN YOUR LOCAL TIME

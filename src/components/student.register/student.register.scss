@@ -4,7 +4,8 @@
   gap: 10px;
   flex-direction: column;
 }
-.form-register-student input {
+.form-register-student input,
+select {
   border-radius: 5px;
   width: 600px;
   height: 25px;

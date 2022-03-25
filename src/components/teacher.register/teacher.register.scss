@@ -5,7 +5,8 @@
   flex-direction: column;
   margin-top: 70px;
 }
-.form-register-teacher input {
+.form-register-teacher input,
+select {
   border-radius: 5px;
   width: 600px;
   height: 25px;
