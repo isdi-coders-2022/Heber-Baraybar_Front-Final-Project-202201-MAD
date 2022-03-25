@@ -27,6 +27,7 @@ function userTeacherReducer(state = initialState, action: AnyAction) {
     case actionTypesTeacher.logout:
       state = initialState;
       return state;
+
     default:
       return state;
   }

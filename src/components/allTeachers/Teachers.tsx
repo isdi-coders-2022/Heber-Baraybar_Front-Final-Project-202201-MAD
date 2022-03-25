@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './allTeachers.scss';
-
+import { Link } from 'react-router-dom';
 import TeacherCard from '../teacher.card/teacher.card';
 import { getAllTeachers } from '../../services/api';
 
@@ -23,7 +23,9 @@ function Teachers(): JSX.Element {
         ))}
       </div>
       <span className="allTeachers__button">
-        <button type="submit">Your Teachers</button>
+        <Link to="/teachers/favorites">
+          <button type="submit">Your Teachers</button>
+        </Link>
       </span>
     </div>
   );

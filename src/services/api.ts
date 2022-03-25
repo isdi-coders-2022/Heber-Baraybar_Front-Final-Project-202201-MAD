@@ -17,10 +17,10 @@ export function registerStudent(user: any): Promise<AxiosResponse> {
   return axios.post(REGISTER_STUDENT, user);
 }
 
-// export function getTeacher(): Promise<AxiosResponse> {
-//   const TEACHER = `http://localhost:5000/user/teacher/${id}`;
-//   return axios.get(TEACHER);
-// }
+export function getTeacher(id: string): Promise<AxiosResponse> {
+  const TEACHER = `http://localhost:5000/user/teacher/${id}`;
+  return axios.get(TEACHER);
+}
 export function getAllTeachers(): Promise<AxiosResponse> {
   return axios.get(TEACHERS);
 }
