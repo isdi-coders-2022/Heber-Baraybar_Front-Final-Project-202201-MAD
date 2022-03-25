@@ -7,6 +7,7 @@ import Home from './components/main/Home';
 import Register from './components/register/register';
 import Favorites from './components/favorites/favorites';
 import Teachers from './components/allTeachers/Teachers';
+// import Teacher from './components/detailTeacher/detailTeacher';
 import Book from './components/book/book';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/teachers" element={<Teachers />} />
+          {/* <Route path="/teacher/detail" element={<Teacher />} /> */}
           <Route path="/teacher/favorite" element={<Favorites />} />
           <Route path="/booking" element={<Book />} />
         </Routes>

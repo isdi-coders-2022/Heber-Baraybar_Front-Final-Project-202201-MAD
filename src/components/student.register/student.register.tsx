@@ -1,34 +1,47 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { studentI } from '../../iterface/interfaces';
+import { login } from '../../redux/actions/action-student/action-creators-student';
+import { registerStudent } from '../../services/api';
 import './student.register.scss';
 
 function StudentRegister(): JSX.Element {
-  const initialState: studentI = {
+  const initialState: Partial<studentI> = {
     name: '',
     email: '',
     country: '',
     city: '',
     languages: [],
-    image: '',
-    video: '',
     comment: '',
     password: '',
   };
 
   const [formState, setFormState] = useState(initialState);
+
+  const dispatch = useDispatch();
+
   function handleChange(ev: any) {
     if (ev.target.name === 'languages') {
       setFormState({
         ...formState,
-        languages: [...formState.languages, ev.target.value],
+        languages: [...(formState.languages as string[]), ev.target.value],
       });
     } else {
       setFormState({ ...formState, [ev.target.name]: ev.target.value });
     }
   }
 
+  function handleSubmit(ev: any) {
+    ev.preventDefault();
+    registerStudent(formState).then((resp) => {
+      console.log(resp);
+
+      dispatch(login(resp.data));
+    });
+  }
+
   return (
-    <form className="form-register-student" action="">
+    <form onSubmit={handleSubmit} className="form-register-student" action="">
       <h2>For Students</h2>
       <input
         type="name"
@@ -46,15 +59,25 @@ function StudentRegister(): JSX.Element {
         value={formState.email}
         onChange={handleChange}
       />
-
-      <input
+      <select
+        name="country"
+        value={formState.languages}
+        onChange={handleChange}
+      >
+        <option value="Spain">Spain</option>
+        <option value="United States">United States</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+        <option value="Italy">Italy</option>
+      </select>
+      {/* <input
         type="text"
         name="country"
         placeholder="  where country are you from"
         value={formState.country}
         onChange={handleChange}
         required
-      />
+      /> */}
       <input
         type="text"
         name="city"
@@ -63,14 +86,25 @@ function StudentRegister(): JSX.Element {
         onChange={handleChange}
         required
       />
-      <input
+      <select
+        name="languages"
+        value={formState.languages}
+        onChange={handleChange}
+      >
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Chinese">Chinese</option>
+        <option value="French">French</option>
+        <option value="Italian">Italian</option>
+      </select>
+      {/* <input
         type="text"
         name="languages"
         placeholder="  what languages do you speak?"
         value={formState.languages}
         onChange={handleChange}
         required
-      />
+      /> */}
       <input
         type="text"
         name="comment"

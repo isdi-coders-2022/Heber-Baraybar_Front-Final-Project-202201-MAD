@@ -1,16 +1,16 @@
 export interface ActionTypes {
   login: string;
   logout: string;
-  register: string;
-  update: string;
-  delete: string;
+  registerTeacher: string;
+  updateTeacher: string;
+  deleteTeacher: string;
 }
 
 const actionTypesTeacher: ActionTypes = {
   login: '@user/login',
   logout: '@userTeacher/logout',
-  register: '@userTeacher/register',
-  update: '@userTeacher/update',
-  delete: '@userTeacher/delete',
+  registerTeacher: '@userTeacher/registerTeacher',
+  updateTeacher: '@userTeacher/updateTeacher',
+  deleteTeacher: '@userTeacher/deleteTeacher',
 };
 export default actionTypesTeacher;

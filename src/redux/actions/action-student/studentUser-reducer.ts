@@ -16,13 +16,14 @@ const initialState = {
   isLogged: false,
 };
 
+// eslint-disable-next-line default-param-last
 function userStudentReducer(state = initialState, action: AnyAction) {
   switch (action.type) {
     case actionTypesStudent.registerStudent:
       return { ...action.payload };
 
     case actionTypesStudent.login:
-      return { ...action.payload };
+      return { ...action.payload, isLogged: true };
 
     case actionTypesStudent.logout:
       return initialState;
@@ -32,6 +33,7 @@ function userStudentReducer(state = initialState, action: AnyAction) {
         ...state,
         favorites: action.payload.favorites,
       };
+
     default:
       return state;
   }

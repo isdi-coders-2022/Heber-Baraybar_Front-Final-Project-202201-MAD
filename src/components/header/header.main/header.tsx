@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss';
 import { Link } from 'react-router-dom';
-import FormLoginHeader from '../login/form.login.header';
+import Login from '../login/login';
 
 function Header() {
   return (
@@ -24,7 +24,7 @@ function Header() {
       </div>
 
       <div>
-        <FormLoginHeader />
+        <Login />
         <Link to="/register">
           <button type="submit" className="header__button-signin">
             SIGN IN
