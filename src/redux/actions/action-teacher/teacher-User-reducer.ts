@@ -15,33 +15,27 @@ const initialState = {
   comment: '',
   password: '',
   reviews: '',
-  studentBooked: [],
+  TeacherBooked: [],
   isLogged: false,
 };
-
 // eslint-disable-next-line default-param-last
 function userTeacherReducer(state = initialState, action: AnyAction) {
   switch (action.type) {
-    case actionTypesTeacher.login:
-      // eslint-disable-next-line no-param-reassign
-      state = { ...action.payload, isLogged: true };
-      return state;
-    case actionTypesTeacher.logout:
-      // eslint-disable-next-line no-param-reassign
-      state = initialState;
-      return state;
     case actionTypesTeacher.registerTeacher:
-      // eslint-disable-next-line no-param-reassign
-      state = { ...action.payload };
-      return state;
-    case actionTypesTeacher.deleteTeacher:
-      // eslint-disable-next-line no-param-reassign
-      state = { ...action.payload };
-      return state;
+      return { ...action.payload };
+
+    case actionTypesTeacher.login:
+      return { ...action.payload, isLogged: true };
+
+    case actionTypesTeacher.logout:
+      return initialState;
+
     case actionTypesTeacher.updateTeacher:
-      // eslint-disable-next-line no-param-reassign
-      state = { ...action.payload };
-      return state;
+      return {
+        ...state,
+        favorites: action.payload.favorites,
+      };
+
     default:
       return state;
   }
