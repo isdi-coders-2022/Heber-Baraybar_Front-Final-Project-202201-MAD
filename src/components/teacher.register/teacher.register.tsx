@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+// import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import { teacherI } from '../../iterface/interfaces';
-import { login } from '../../redux/actions/action-teacher/action-creators-teachers';
+import { loginTeacher } from '../../redux/actions/action-teacher/action-creators-teachers';
 import { registerTeacher } from '../../services/api';
+// import { app } from '../../firebase/fileUpload';
 import './teacher.register.scss';
 
 function teacherRegister(): JSX.Element {
@@ -19,7 +21,8 @@ function teacherRegister(): JSX.Element {
     comment: '',
     password: '',
   };
-
+  // const storage = getStorage(app);
+  // const [image, setImage] = useState<any>(null);
   const [formState, setFormState] = useState(initialState);
   const dispatch = useDispatch();
 
@@ -35,9 +38,20 @@ function teacherRegister(): JSX.Element {
   }
   function handleSubmit(ev: any) {
     ev.preventDefault();
+    // let url = '';
+    // const imageRef = ref(storage, image.name);
+    // await uploadBytes(imageRef, image);
+    // url = await getDownloadURL(imageRef);
+    // console.log(url);
+    // setFormState({
+    //   ...formState,
+    //   image: url,
+    //   [ev.target.image]: ev.target.value,
+    // });
+
     registerTeacher(formState).then((resp) => {
       console.log(resp);
-      dispatch(login(resp.data));
+      dispatch(loginTeacher(resp.data));
     });
   }
   return (
@@ -137,6 +151,7 @@ function teacherRegister(): JSX.Element {
       />
       <input
         type="text"
+        // onChange={(e: any) => setImage(e.target.files[0])}
         name="image"
         placeholder="  photo"
         value={formState.image}

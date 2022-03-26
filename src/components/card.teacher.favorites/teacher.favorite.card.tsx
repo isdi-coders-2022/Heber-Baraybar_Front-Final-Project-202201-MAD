@@ -1,5 +1,8 @@
 import React from 'react';
 import './teacher.favorite.card.scss';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 function FavoriteCard({ teacher }: { teacher: any }): JSX.Element {
   return (
@@ -12,10 +15,14 @@ function FavoriteCard({ teacher }: { teacher: any }): JSX.Element {
       <span className="card-favorite__star">⭐5</span>
       <div className="card-favorite__languages">
         <p>{teacher.languages.map((item: { item: any }) => `${item} `)}</p>
-        <span>🗑</span>
+        <span>
+          <FontAwesomeIcon icon={faTrashCan} />
+        </span>
       </div>
       <div className="card-favorite__book">
-        <button type="submit">Book</button>
+        <Link to="/booking">
+          <button type="submit">Book</button>
+        </Link>
       </div>
     </div>
   );

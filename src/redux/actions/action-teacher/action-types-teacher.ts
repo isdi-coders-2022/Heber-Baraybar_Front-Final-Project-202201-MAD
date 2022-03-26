@@ -4,6 +4,7 @@ export interface ActionTypes {
   registerTeacher: string;
   updateTeacher: string;
   deleteTeacher: string;
+  addFavorites: string;
 }
 
 const actionTypesTeacher: ActionTypes = {
@@ -12,5 +13,6 @@ const actionTypesTeacher: ActionTypes = {
   registerTeacher: '@userTeacher/registerTeacher',
   updateTeacher: '@userTeacher/updateTeacher',
   deleteTeacher: '@userTeacher/deleteTeacher',
+  addFavorites: '@teachers/favorites',
 };
 export default actionTypesTeacher;

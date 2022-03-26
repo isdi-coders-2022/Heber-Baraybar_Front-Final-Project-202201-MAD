@@ -1,13 +1,18 @@
 import axios, { AxiosResponse } from 'axios';
 
-const LOGIN_API = 'http://localhost:5000/user/student/login';
+const LOGIN_STUDENT = 'http://localhost:5000/user/student/login';
+const LOGIN_TEACHER = 'http://localhost:5000/user/teacher/login';
 
 const REGISTER_TEACHER = 'http://localhost:5000/user/teacher/register';
 const REGISTER_STUDENT = 'http://localhost:5000/user/student/register';
+
 const TEACHERS = 'http://localhost:5000/user/teacher';
 
-export function login(user: any): Promise<AxiosResponse> {
-  return axios.post(LOGIN_API, user);
+export function loginStudent(user: any): Promise<AxiosResponse> {
+  return axios.post(LOGIN_STUDENT, user);
+}
+export function loginTeacher(user: any): Promise<AxiosResponse> {
+  return axios.post(LOGIN_TEACHER, user);
 }
 
 export function registerTeacher(user: any): Promise<AxiosResponse> {
@@ -28,11 +33,15 @@ export function getTeacher(id: string): Promise<AxiosResponse> {
   const TEACHER = `http://localhost:5000/user/teacher/${id}`;
   return axios.get(TEACHER);
 }
+function getToken() {
+  return localStorage.getItem('token');
+}
 export function addFavorites(id: string): Promise<AxiosResponse> {
-  const TEACHERS_FAVORITES = `http://localhost:5000/${id}/favorites`;
-  // headers: {
-  //     Authorization: Bearer ${getToken()},
-  //   },
+  const TEACHERS_FAVORITES = `http://localhost:5000/user/teachers/${id}/favorites`;
 
-  return axios.patch(TEACHERS_FAVORITES);
+  return axios.patch(TEACHERS_FAVORITES, id, {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  });
 }

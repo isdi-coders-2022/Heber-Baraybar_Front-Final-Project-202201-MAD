@@ -24,6 +24,8 @@ function Header() {
       </div>
 
       <div>
+        {}
+
         <Login />
         <Link to="/register">
           <button type="submit" className="header__button-signin">

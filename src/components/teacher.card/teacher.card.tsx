@@ -1,5 +1,9 @@
 import React from 'react';
 import './teacher.card.scss';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 
 function TeacherCard({ teacher }: { teacher: any }): JSX.Element {
   return (
@@ -28,8 +32,19 @@ function TeacherCard({ teacher }: { teacher: any }): JSX.Element {
           </div>
         </div>
         <div className="teacher-card__habilities-book">
-          <button type="submit">Book</button>
-          <span>🖤</span>
+          <Link to="/booking">
+            <button className="button-book" type="submit">
+              Book
+            </button>
+          </Link>
+          <span>
+            <button type="submit">
+              <FontAwesomeIcon icon={solidHeart} />
+            </button>
+          </span>
+          <span>
+            <FontAwesomeIcon icon={faHeart} />
+          </span>
         </div>
       </div>
     </div>

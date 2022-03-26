@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginI } from '../../../iterface/interfaces';
-import { login } from '../../../services/api';
+import { loginStudentI, loginTeacherI } from '../../../iterface/interfaces';
+import { loginStudent, loginTeacher } from '../../../services/api';
 import * as action from '../../../redux/actions/action-student/action-creators-student';
-
+import * as actions from '../../../redux/actions/action-teacher/action-creators-teachers';
 import './login.scss';
 
 function Login() {
-  const [useForm, setUserForm] = useState<loginI>({ name: '', password: '' });
+  const [useForm, setUserForm] = useState<loginStudentI>({
+    name: '',
+    password: '',
+  });
+  const [useTeacherForm, setTeacherForm] = useState<loginTeacherI>({
+    name: '',
+    password: '',
+  });
   const dispatch = useDispatch();
   function handleChange(ev: any) {
     setUserForm({ ...useForm, [ev.target.name]: ev.target.value });
+    setTeacherForm({ ...useTeacherForm, [ev.target.name]: ev.target.value });
   }
-  async function handleSubmit(ev: any) {
-    ev.preventDefault();
+
+  async function handleSubmitStudent() {
+    // ev.preventDefault();
+    // ev: any;
+
+    console.log('STUDENT LOGIN');
+
     try {
-      const result = await login(useForm);
+      const result = await loginStudent(useForm);
       console.log(result);
 
       dispatch(action.login({ ...result.data, isLogged: true }));
@@ -24,8 +37,23 @@ function Login() {
     }
   }
 
+  async function handleSubmitTeacher() {
+    // ev.preventDefult();
+    console.log('TEACHER LOGIN');
+
+    try {
+      const result = await loginTeacher(useTeacherForm);
+      console.log(result);
+
+      dispatch(actions.loginTeacher({ ...result.data, isLogged: true }));
+      console.log(result.data, 'RESULT DATA E LOGIN DE TEACHER');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form">
       <p className="form__title-login">LOGIN</p>
       <input
         type="name"
@@ -41,8 +69,20 @@ function Login() {
         value={useForm.password}
         onChange={handleChange}
       />
-      <button type="submit" className="form__button-go">
-        GO
+      <button
+        type="button"
+        className="form__button"
+        onClick={handleSubmitStudent}
+      >
+        Student
+      </button>
+
+      <button
+        type="button"
+        className="form__button"
+        onClick={handleSubmitTeacher}
+      >
+        Teacher
       </button>
     </form>
   );

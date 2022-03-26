@@ -16,3 +16,6 @@ export const register = () => ({
 export const deleteTeacher = () => ({
   type: actionTypesTeacher.deleteTeacher,
 });
+export const addFavorites = () => ({
+  type: actionTypesTeacher.addFavorites,
+});

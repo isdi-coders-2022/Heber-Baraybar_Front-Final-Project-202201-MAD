@@ -22,7 +22,11 @@ export interface teacherI {
   comment: string;
   password: string;
 }
-export interface loginI {
+export interface loginStudentI {
+  name: string;
+  password: string;
+}
+export interface loginTeacherI {
   name: string;
   password: string;
 }

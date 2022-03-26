@@ -30,7 +30,7 @@ function userTeacherReducer(state = initialState, action: AnyAction) {
     case actionTypesTeacher.logout:
       return initialState;
 
-    case actionTypesTeacher.updateTeacher:
+    case actionTypesTeacher.addFavorites:
       return {
         ...state,
         favorites: action.payload.favorites,
