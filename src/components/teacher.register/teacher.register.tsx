@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/actions/action-teacher/action-creators-teachers';
 import { teacherI } from '../../iterface/interfaces';
+import { login } from '../../redux/actions/action-teacher/action-creators-teachers';
+import { registerTeacher } from '../../services/api';
 import './teacher.register.scss';
 
 function teacherRegister(): JSX.Element {
-  const initialState: teacherI = {
+  const initialState: Partial<teacherI> = {
     name: '',
     email: '',
     country: '',
@@ -27,17 +27,21 @@ function teacherRegister(): JSX.Element {
     if (ev.target.name === 'languages') {
       setFormState({
         ...formState,
-        languages: [...formState.languages, ev.target.value],
+        languages: [...(formState.languages as string[]), ev.target.value],
       });
     } else {
       setFormState({ ...formState, [ev.target.name]: ev.target.value });
     }
   }
-  function handleSubmit() {
-    dispatch(login(formState));
+  function handleSubmit(ev: any) {
+    ev.preventDefault();
+    registerTeacher(formState).then((resp) => {
+      console.log(resp);
+      dispatch(login(resp.data));
+    });
   }
   return (
-    <form className="form-register-teacher" action="">
+    <form onSubmit={handleSubmit} className="form-register-teacher" action="">
       <h2>For teachers</h2>
       <input
         type="name"
@@ -55,11 +59,7 @@ function teacherRegister(): JSX.Element {
         value={formState.email}
         onChange={handleChange}
       />
-      <select
-        name="country"
-        value={formState.languages}
-        onChange={handleChange}
-      >
+      <select name="country" value={formState.country} onChange={handleChange}>
         <option value="Spain">Spain</option>
         <option value="United States">United States</option>
         <option value="China">China</option>
@@ -143,9 +143,7 @@ function teacherRegister(): JSX.Element {
         onChange={handleChange}
         required
       />
-      <button type="submit" onClick={handleSubmit}>
-        SUBMIT
-      </button>
+      <button type="submit">SUBMIT</button>
     </form>
   );
 }

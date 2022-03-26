@@ -1,6 +1,7 @@
+import { actionI } from '../../../iterface/interfaces';
 import actionTypesTeacher from './action-types-teacher';
 
-export const login = (user: any) => ({
+export const login = (user: object): actionI => ({
   type: actionTypesTeacher.login,
   payload: user,
 });
