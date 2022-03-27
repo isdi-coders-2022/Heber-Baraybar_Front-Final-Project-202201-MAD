@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './detail.teacher.scss';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import TeacherCard from '../teacher.card/teacher.card';
 import { getTeacher } from '../../services/api';
 
 function Teacher(): JSX.Element {
   const [teacher, setTeacher] = useState({});
+  const { id } = useParams();
 
   useEffect(() => {
-    getTeacher('id').then((resp) => {
+    getTeacher(id as string).then((resp) => {
       console.log(resp.data);
       setTeacher(resp.data);
     });

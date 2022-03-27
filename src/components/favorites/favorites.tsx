@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './favorites.scss';
 import FavoriteCard from '../card.teacher.favorites/teacher.favorite.card';
-import { getAllTeachers } from '../../services/api';
+import { getTeacher } from '../../services/api';
 
 function Favorites() {
-  const [teachers, setTeachers] = useState([]);
+  const [teacher, setTeacher] = useState([]);
 
   useEffect(() => {
-    getAllTeachers().then((resp) => {
+    getTeacher(id).then((resp) => {
       console.log(resp.data);
-      setTeachers(resp.data);
+      setTeacher(resp.data);
     });
   }, []);
 
@@ -17,7 +17,7 @@ function Favorites() {
     <div className="favorite">
       <h2>Your favorites teachers</h2>
       <div className="favorite__card">
-        {teachers.map((item) => (
+        {teacher.map((item) => (
           <FavoriteCard teacher={item} />
         ))}
       </div>

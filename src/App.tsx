@@ -7,8 +7,8 @@ import Home from './components/main/Home';
 import Register from './components/register/register';
 import Favorites from './components/favorites/favorites';
 import Teachers from './components/allTeachers/Teachers';
-// import Teacher from './components/detailTeacher/detailTeacher';
-import Book from './components/book/book';
+import Teacher from './components/detailTeacher/detailTeacher';
+import Booking from './components/booking/booking';
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/teachers" element={<Teachers />} />
-          {/* <Route path="/teacher/detail" element={<Teacher />} /> */}
+          <Route path="/teachers/details/:id" element={<Teacher />} />
           <Route path="/teacher/favorite" element={<Favorites />} />
-          <Route path="/booking" element={<Book />} />
+          <Route path="/booking/:id" element={<Booking />} />
         </Routes>
         <Footer />
       </div>

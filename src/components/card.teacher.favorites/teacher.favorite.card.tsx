@@ -7,9 +7,9 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 function FavoriteCard({ teacher }: { teacher: any }): JSX.Element {
   return (
     <div className="card-favorite">
+      <h3>{teacher.name}</h3>
       <img className="card-favorite__img" src={teacher.image} alt="" />
       <div className="card-favorite__name">
-        <h3>{teacher.name}</h3>
         <span>🏳</span>
       </div>
       <span className="card-favorite__star">⭐5</span>

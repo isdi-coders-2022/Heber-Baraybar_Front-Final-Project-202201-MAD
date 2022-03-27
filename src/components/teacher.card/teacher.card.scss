@@ -1,25 +1,42 @@
 .teacher-card {
+  color: black;
+  text-decoration: none;
   width: 500px;
   height: 180px;
   display: flex;
   padding: 10px;
   background-color: rgb(167, 114, 114);
   border-radius: 20px;
-
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &__data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
   &__data img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     border-style: double;
   }
-  &__data-name {
+  &__data-price {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
+    padding: 10px;
     align-items: center;
   }
-  &__data-name h2 {
-    font-size: 15px;
+
+  &__country-country {
+    font-size: 16px;
+    color: black;
   }
   &__details-text {
     color: white;
@@ -34,6 +51,7 @@
   &__habilities-speciality {
     h2 {
       font-size: 20px;
+      text-decoration: none;
     }
     p {
       font-size: 14px;
@@ -63,4 +81,7 @@
   color: white;
   border-radius: 10px;
   cursor: pointer;
+}
+.heart {
+  background-color: rgb(167, 114, 114);
 }

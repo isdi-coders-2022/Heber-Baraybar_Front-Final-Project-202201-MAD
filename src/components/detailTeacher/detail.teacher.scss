@@ -16,9 +16,15 @@
     gap: 20px;
   }
   &__button {
-    display: flex;
-    justify-content: center;
-    padding: 100px;
+    &__button {
+      margin: 70px;
+      background-color: rgb(112, 82, 82);
+      width: 120px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+    }
   }
   &__button button {
     background-color: rgb(112, 82, 82);

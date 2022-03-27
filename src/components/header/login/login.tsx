@@ -29,8 +29,9 @@ function Login() {
 
     try {
       const result = await loginStudent(useForm);
-      console.log(result);
 
+      console.log(result);
+      localStorage.setItem('token', result.data.token);
       dispatch(action.login({ ...result.data, isLogged: true }));
     } catch (error) {
       console.log(error);
@@ -44,6 +45,7 @@ function Login() {
     try {
       const result = await loginTeacher(useTeacherForm);
       console.log(result);
+      localStorage.setItem('token', result.data.token);
 
       dispatch(actions.loginTeacher({ ...result.data, isLogged: true }));
       console.log(result.data, 'RESULT DATA E LOGIN DE TEACHER');
