@@ -31,7 +31,6 @@ export function getStudent(id: string): Promise<AxiosResponse> {
 
 export function getTeacher(id: string): Promise<AxiosResponse> {
   const TEACHER = `http://localhost:5000/user/teacher/${id}`;
-  console.log(TEACHER, ' ruta de teacher');
 
   return axios.get(TEACHER);
 }

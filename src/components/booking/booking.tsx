@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
 import { getTeacher } from '../../services/api';
 import TeacherCard from '../teacher.card/teacher.card';
+import { teacherI } from '../../iterface/interfaces';
 
 function Booking(): JSX.Element {
   const [teacher, setTeacher] = useState({});
@@ -22,7 +23,7 @@ function Booking(): JSX.Element {
       <h2 className="book__title">BOOK YOUR CLASS</h2>
 
       <div className="book__teacher">
-        <TeacherCard teacher={teacher} />
+        <TeacherCard teacher={teacher as teacherI} />
       </div>
 
       <h3 className="book__title-calendary">
