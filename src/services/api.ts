@@ -38,7 +38,7 @@ function getToken() {
   return localStorage.getItem('token');
 }
 export function addFavorites(id: string): Promise<AxiosResponse> {
-  const TEACHERS_FAVORITES = `http://localhost:5000/user/teachers/${id}/favorites`;
+  const TEACHERS_FAVORITES = `http://localhost:5000/user/teacher/${id}/favorites`;
 
   return axios.patch(TEACHERS_FAVORITES, id, {
     headers: {

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 function FavoriteCard({ teacher }: { teacher: any }): JSX.Element {
+  console.log('Teacher favorite ', teacher, ' de la tarjeta');
   return (
     <div className="card-favorite">
       <h3>{teacher.name}</h3>
