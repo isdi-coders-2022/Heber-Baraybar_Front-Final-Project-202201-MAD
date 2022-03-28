@@ -27,7 +27,7 @@ function Favorites(): JSX.Element {
           <FavoriteCard teacher={item as teacherI} />
         ))}
       </div>
-      <button type="submit">
+      <button className="favorite__button" type="submit">
         PURCHASE OUR BONUS AND GET ONE CLASS FOR FREE
       </button>
     </div>

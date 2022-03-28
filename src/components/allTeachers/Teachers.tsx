@@ -26,19 +26,21 @@ function Teachers(): JSX.Element {
           <>
             <TeacherCard teacher={item as teacherI} />
             <Link to={`/teachers/details/${item._id}`}>
-              <button type="button">about me</button>
+              <button className="allTeachers__about" type="button">
+                about me
+              </button>
             </Link>
           </>
         ))}
       </div>
 
-      <Link to={`/student/favorites/${id}`}>
-        <span>
-          <button className="allTeachers__button" type="submit">
-            Your Teachers
-          </button>
-        </span>
-      </Link>
+      {/* <Link to={`/student/favorites/${id}`}> */}
+      <span className="allTeachers__button">
+        <Link to={`/favorites/${id}`}>
+          <button type="button">Your Teachers</button>
+        </Link>
+      </span>
+      {/* </Link> */}
     </div>
   );
 }
