@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './favorites.scss';
 import FavoriteCard from '../card.teacher.favorites/teacher.favorite.card';
-import { getAllTeachers } from '../../services/api';
+// import { teacherI } from '../../iterface/interfaces';
+import { addFavorites } from '../../services/api';
 
-function Favorites() {
-  const [teachers, setTeachers] = useState([]);
+function Favorites(): JSX.Element {
+  const [teacher, setTeacher] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    getAllTeachers().then((resp) => {
+    addFavorites(id as string).then((resp) => {
       console.log(resp.data);
-      setTeachers(resp.data);
+      setTeacher(resp.data);
     });
   }, []);
 
@@ -17,9 +20,7 @@ function Favorites() {
     <div className="favorite">
       <h2>Your favorites teachers</h2>
       <div className="favorite__card">
-        {teachers.map((item) => (
-          <FavoriteCard teacher={item} />
-        ))}
+        <FavoriteCard teacher={teacher} />
       </div>
       <button type="submit">
         PURCHASE OUR BONUS AND GET ONE CLASS FOR FREE

@@ -1,7 +1,7 @@
 import { actionI } from '../../../iterface/interfaces';
 import actionTypesTeacher from './action-types-teacher';
 
-export const login = (user: object): actionI => ({
+export const loginTeacher = (user: object): actionI => ({
   type: actionTypesTeacher.login,
   payload: user,
 });
@@ -15,4 +15,7 @@ export const register = () => ({
 });
 export const deleteTeacher = () => ({
   type: actionTypesTeacher.deleteTeacher,
+});
+export const addFavorites = () => ({
+  type: actionTypesTeacher.addFavorites,
 });

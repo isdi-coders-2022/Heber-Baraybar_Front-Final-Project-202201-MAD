@@ -21,8 +21,13 @@ export interface teacherI {
   video: string;
   comment: string;
   password: string;
+  _id: string;
 }
-export interface loginI {
+export interface loginStudentI {
+  name: string;
+  password: string;
+}
+export interface loginTeacherI {
   name: string;
   password: string;
 }
