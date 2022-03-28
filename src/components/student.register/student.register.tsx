@@ -63,7 +63,9 @@ function StudentRegister(): JSX.Element {
         name="country"
         value={formState.languages}
         onChange={handleChange}
+        required
       >
+        <option value="">select your country</option>
         <option value="Spain">Spain</option>
         <option value="United States">United States</option>
         <option value="China">China</option>
@@ -90,7 +92,9 @@ function StudentRegister(): JSX.Element {
         name="languages"
         value={formState.languages}
         onChange={handleChange}
+        required
       >
+        <option value="">Languages</option>
         <option value="English">English</option>
         <option value="Spanish">Spanish</option>
         <option value="Chinese">Chinese</option>

@@ -52,7 +52,7 @@ function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
           </div>
           <div className="teacher-card__habilities-languages">
             <h2>Speaks</h2>
-            {/* {teacher.languages?.map((item: { item: any }) => `${item} `)} */}
+            {teacher.languages?.map((item: { item: any }) => `${item} `)}
           </div>
         </div>
       </div>

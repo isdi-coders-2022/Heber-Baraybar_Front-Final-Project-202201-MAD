@@ -73,7 +73,13 @@ function teacherRegister(): JSX.Element {
         value={formState.email}
         onChange={handleChange}
       />
-      <select name="country" value={formState.country} onChange={handleChange}>
+      <select
+        name="country"
+        value={formState.country}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select your coutry</option>
         <option value="Spain">Spain</option>
         <option value="United States">United States</option>
         <option value="China">China</option>
@@ -101,7 +107,9 @@ function teacherRegister(): JSX.Element {
         name="languages"
         value={formState.languages}
         onChange={handleChange}
+        required
       >
+        <option value="">languages</option>
         <option value="English">English</option>
         <option value="Spanish">Spanish</option>
         <option value="Chinese">Chinese</option>

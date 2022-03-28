@@ -22,6 +22,7 @@ function Teacher(): JSX.Element {
       <div className="getTeacher__card">
         <TeacherCard teacher={teacher as teacherI} />
       </div>
+      {/* <div className="getTeacher__video">{teacher.video}</div> */}
       <span className="allTeachers__button">
         <Link to="/teachers/favorites">
           <button type="submit">Your Teachers</button>
