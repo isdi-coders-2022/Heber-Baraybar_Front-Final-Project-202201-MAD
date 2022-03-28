@@ -24,7 +24,7 @@ function userTeacherReducer(state = initialState, action: AnyAction) {
     case actionTypesTeacher.registerTeacher:
       return { ...action.payload };
 
-    case actionTypesTeacher.login:
+    case actionTypesTeacher.loginTeacher:
       return { ...action.payload, isLogged: true };
 
     case actionTypesTeacher.logout:

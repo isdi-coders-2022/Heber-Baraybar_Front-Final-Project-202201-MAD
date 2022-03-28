@@ -22,9 +22,6 @@ function Login() {
   }
 
   async function handleSubmitStudent() {
-    // ev.preventDefault();
-    // ev: any;
-
     console.log('STUDENT LOGIN');
 
     try {
@@ -39,7 +36,6 @@ function Login() {
   }
 
   async function handleSubmitTeacher() {
-    // ev.preventDefult();
     console.log('TEACHER LOGIN');
 
     try {

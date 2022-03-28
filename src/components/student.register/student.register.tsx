@@ -109,8 +109,7 @@ function StudentRegister(): JSX.Element {
         onChange={handleChange}
         required
       /> */}
-      <input
-        type="text"
+      <textarea
         name="comment"
         placeholder="  tell us something about yourself"
         value={formState.comment}

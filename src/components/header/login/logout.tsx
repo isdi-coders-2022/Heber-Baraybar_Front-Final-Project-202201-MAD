@@ -7,7 +7,7 @@ import { logout } from '../../../redux/actions/action-student/action-creators-st
 function Logout() {
   const [useForm, setUserForm] = useState({});
   const dispatch = useDispatch();
-  function handlesChange(ev: any) {
+  function handleChange(ev: any) {
     setUserForm({ ...useForm, [ev.target.name]: ev.target.value });
   }
   async function handleSubmit(ev: any) {

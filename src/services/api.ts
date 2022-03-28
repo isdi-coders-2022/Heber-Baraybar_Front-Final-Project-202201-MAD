@@ -25,7 +25,7 @@ export function getAllTeachers(): Promise<AxiosResponse> {
   return axios.get(TEACHERS);
 }
 export function getStudent(id: string): Promise<AxiosResponse> {
-  const STUDENT = `http://localhost:5000/user/teacher/${id}`;
+  const STUDENT = `http://localhost:5000/user/student/${id}`;
   return axios.get(STUDENT);
 }
 
