@@ -3,37 +3,34 @@ import { MemoryRouter } from 'react-router-dom';
 import { teacherI } from '../../iterface/interfaces.js';
 import { render, screen } from '../../utils/test.utils.js';
 
-import FavoriteCard from './teacher.favorite.card';
+import teacherRegister from './teacher.register';
+
 let teacher: teacherI = {
   name: '',
   email: '',
   country: '',
   city: '',
   languages: [],
-  speciality: [],
-  price: 0,
   image: '',
   video: '',
-  comment: '',
+
   password: '',
+  speciality: [],
+  price: 0,
   _id: '',
+  comment: '',
 };
 
-describe('Given FavoriteCard component', () => {
-  describe('When FavoriteCard is submitted', () => {
+describe('Given teacherRegister component', () => {
+  describe('When teacherRegister is submitted', () => {
     test('should be rendered', async () => {
       render(
         <MemoryRouter>
-          <FavoriteCard
-            teacher={teacher}
-            remove={function (teacher: teacherI): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
+          <teacherRegister />
         </MemoryRouter>
       );
 
-      expect(screen.getAllByText(/book/i));
+      expect(screen.getAllByText(/india/i));
     });
   });
 });
