@@ -2,18 +2,18 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test.utils.js';
 
-import Main from './Home';
+import StudentRegister from './student.register';
 
-describe('Given Form component', () => {
-  describe('When form is submitted', () => {
+describe('Given StudentRegister component', () => {
+  describe('When StudentRegister is submitted', () => {
     test('should be rendered', async () => {
       render(
         <MemoryRouter>
-          <Main />
+          <StudentRegister />
         </MemoryRouter>
       );
 
-      expect(screen.getAllByText(/fun/i));
+      expect(screen.getAllByText(/chinese/i));
     });
   });
 });

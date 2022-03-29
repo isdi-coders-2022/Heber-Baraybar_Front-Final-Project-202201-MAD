@@ -2,18 +2,18 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test.utils.js';
 
-import Main from './Home';
+import Footer from './footer';
 
-describe('Given Form component', () => {
-  describe('When form is submitted', () => {
+describe('Given Footer component', () => {
+  describe('When Footer is submitted', () => {
     test('should be rendered', async () => {
       render(
         <MemoryRouter>
-          <Main />
+          <Footer />
         </MemoryRouter>
       );
 
-      expect(screen.getAllByText(/fun/i));
+      expect(screen.getAllByText(/works/i));
     });
   });
 });

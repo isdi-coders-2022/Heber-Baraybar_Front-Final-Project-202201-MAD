@@ -2,18 +2,18 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test.utils.js';
 
-import Main from './Home';
+import Works from './how.works';
 
-describe('Given Form component', () => {
-  describe('When form is submitted', () => {
+describe('Given Works component', () => {
+  describe('When Works is submitted', () => {
     test('should be rendered', async () => {
       render(
         <MemoryRouter>
-          <Main />
+          <Works />
         </MemoryRouter>
       );
 
-      expect(screen.getAllByText(/fun/i));
+      expect(screen.getAllByText(/meal/i));
     });
   });
 });

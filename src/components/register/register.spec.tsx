@@ -2,18 +2,18 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test.utils.js';
 
-import Main from './Home';
+import Register from './register';
 
-describe('Given Form component', () => {
-  describe('When form is submitted', () => {
+describe('Given Register component', () => {
+  describe('When Register is submitted', () => {
     test('should be rendered', async () => {
       render(
         <MemoryRouter>
-          <Main />
+          <Register />
         </MemoryRouter>
       );
 
-      expect(screen.getAllByText(/fun/i));
+      expect(screen.getByRole());
     });
   });
 });

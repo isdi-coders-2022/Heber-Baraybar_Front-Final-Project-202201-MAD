@@ -7,8 +7,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 // Import your own reducer
 
-import { userReducer } from '../redux/user/reducer';
-import { ticketReducer } from '../redux/ticket/reducer';
+import { userTeacherReducer } from '../redux/actions/action-teacher/teacher-User-reducer';
+import { userStudentReducer } from '../redux/actions/action-student/studentUser-reducer';
+
 
 function render(
   ui,
@@ -16,8 +17,8 @@ function render(
     preloadedState,
     store = configureStore({
       reducer: {
-        ticket: ticketReducer,
-        user: userReducer,
+        student: userStudentReducer,
+        teacher: userTeacherReducer,
       },
       preloadedState,
     }),
