@@ -4,14 +4,14 @@ import './teacher.card.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as heart } from '@fortawesome/free-regular-svg-icons';
+// import { faHeart as heart } from '@fortawesome/free-regular-svg-icons';
 import { teacherI } from '../../iterface/interfaces';
 import { addFavorites } from '../../services/api';
 
 function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
-  function removeFavoritesCard(id: string) {
-    addFavorites(id);
-  }
+  // function removeFavoritesCard(id: string) {
+  //   addFavorites(id);
+  // }
   function addFavoritesCard(id: string) {
     addFavorites(id);
   }
@@ -47,14 +47,14 @@ function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
                 onClick={() => addFavoritesCard(teacher._id)}
               />
             </span>
-            <span>
+            {/* <span>
               <FontAwesomeIcon
                 icon={heart}
                 className="heart"
                 type="button"
                 onClick={() => removeFavoritesCard(teacher._id)}
               />
-            </span>
+            </span> */}
           </span>
         </div>
 

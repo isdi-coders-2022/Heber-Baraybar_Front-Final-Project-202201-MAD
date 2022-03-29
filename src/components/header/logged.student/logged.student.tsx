@@ -1,17 +1,14 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
-// import { logout } from '../../../redux/actions/action-student/action-creators-student';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../redux/actions/action-student/action-creators-student';
 import './logged.student.scss';
 
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../../redux/store/store';
-
 function LoggedStudent({ student }: { student: any }): JSX.Element {
-  // const dispatch = useDispatch();
-  // const handleClick = () => {
-  //   dispatch(logout());
-  // };
+  const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(logout());
+  };
   return (
     <div className="logged">
       <div className="logged__container-name">
@@ -23,7 +20,7 @@ function LoggedStudent({ student }: { student: any }): JSX.Element {
             alt={student.userName}
           />
         </div>
-        <button className="logged__button" type="button">
+        <button className="logged__button" type="button" onClick={handleClick}>
           Logout
         </button>
       </div>

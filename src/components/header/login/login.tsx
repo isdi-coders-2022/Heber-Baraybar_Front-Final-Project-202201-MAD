@@ -46,14 +46,6 @@ function Login() {
     } catch (error) {
       console.log(error);
     }
-    setTeacherForm({
-      name: '',
-      password: '',
-    });
-    setUserForm({
-      name: '',
-      password: '',
-    });
   }
 
   async function handleSubmitTeacher() {
@@ -65,6 +57,11 @@ function Login() {
       localStorage.setItem('token', result.data.token);
 
       dispatch(actions.loginTeacher({ ...result.data, isLogged: true }));
+      7;
+      setTeacherForm({
+        name: '',
+        password: '',
+      });
       console.log(result.data, 'RESULT DATA E LOGIN DE TEACHER');
     } catch (error) {
       console.log(error);

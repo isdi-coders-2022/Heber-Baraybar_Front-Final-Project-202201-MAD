@@ -3,16 +3,8 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../../redux/actions/action-teacher/action-creators-teachers';
 import './logged.teacher.scss';
 
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../../redux/store/store';
-
 function LoggedTeacher({ teacher }: { teacher: any }): JSX.Element {
   const dispatch = useDispatch();
-  //  const isLoggedStudent = useSelector((state: RootState) => {
-  //    state.student;
-  //  });
-  // const isLoggedTeacher = useSelector((state: RootState) => state.teacher);
-  // console.log('este es mi selector', isLoggedStudent);
 
   const handleClick = () => {
     dispatch(logout());
