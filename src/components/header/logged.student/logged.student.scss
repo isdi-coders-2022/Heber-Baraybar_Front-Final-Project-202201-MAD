@@ -1,0 +1,20 @@
+.logged {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  &__container-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  &__button {
+    padding: 5px;
+    background-color: rgb(158, 131, 131);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}

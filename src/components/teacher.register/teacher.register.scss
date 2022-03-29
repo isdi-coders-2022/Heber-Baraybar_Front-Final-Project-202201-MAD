@@ -4,6 +4,12 @@
   gap: 10px;
   flex-direction: column;
   margin-top: 70px;
+  &__country {
+    font-size: 12px;
+  }
+  &__languages {
+    font-size: 12px;
+  }
 }
 .form-register-teacher input,
 select {

@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/jsx-no-bind */
 import React, { useEffect, useState } from 'react';
 import './favorites.scss';
 import { useSelector } from 'react-redux';
@@ -19,12 +21,21 @@ function Favorites(): JSX.Element {
     });
   }, []);
 
+  function removeFavoriteCard(favTeacher: teacherI) {
+    setFavorites(
+      favorites.filter((item: teacherI) => item._id !== favTeacher._id)
+    );
+  }
+
   return (
     <div className="favorite">
       <h2>Your favorites teachers</h2>
       <div className="favorite__card">
         {favorites.map((item: any) => (
-          <FavoriteCard teacher={item as teacherI} />
+          <FavoriteCard
+            teacher={item as teacherI}
+            remove={removeFavoriteCard}
+          />
         ))}
       </div>
       <button className="favorite__button" type="submit">

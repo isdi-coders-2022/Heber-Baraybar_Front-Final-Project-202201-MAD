@@ -11,6 +11,7 @@ function Teacher(): JSX.Element {
   const [teacher, setTeacher] = useState({});
   const { id } = useParams();
   const student = useSelector((state: RootState) => state.student);
+  const teacherData = useSelector((state: RootState) => state.teacher);
   console.log('soy student', student);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function Teacher(): JSX.Element {
       <div className="getTeacher__card">
         <TeacherCard teacher={teacher as teacherI} />
       </div>
-      {/* <div className="getTeacher__video">{teacher?.video}</div> */}
+      <div className="getTeacher__video">{teacherData.video}</div>
       <span className="getTeacher__button">
         <Link to={`/favorites/${id}`}>
           <button type="button">Your Teachers</button>

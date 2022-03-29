@@ -4,17 +4,15 @@ import './teacher.card.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-
+import { faHeart as heart } from '@fortawesome/free-regular-svg-icons';
 import { teacherI } from '../../iterface/interfaces';
 import { addFavorites } from '../../services/api';
-// import Favorites from '../favorites/favorites';
 
 function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
-  console.log('Teacher ', teacher, ' de la tarjeta');
-
+  function removeFavoritesCard(id: string) {
+    addFavorites(id);
+  }
   function addFavoritesCard(id: string) {
-    console.log('Llega esta id :', id);
-
     addFavorites(id);
   }
 
@@ -41,16 +39,22 @@ function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
             I`m from {teacher.country}
           </span>
           <span>
-            <button className="heart" type="submit">
-              <span>
-                <button
-                  type="button"
-                  onClick={() => addFavoritesCard(teacher._id)}
-                >
-                  <FontAwesomeIcon icon={faHeart} />
-                </button>
-              </span>
-            </button>
+            <span>
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="heart"
+                type="button"
+                onClick={() => addFavoritesCard(teacher._id)}
+              />
+            </span>
+            <span>
+              <FontAwesomeIcon
+                icon={heart}
+                className="heart"
+                type="button"
+                onClick={() => removeFavoritesCard(teacher._id)}
+              />
+            </span>
           </span>
         </div>
 
@@ -64,7 +68,7 @@ function TeacherCard({ teacher }: { teacher: teacherI }): JSX.Element {
           </div>
           <div className="teacher-card__habilities-languages">
             <h2>Speaks</h2>
-            {/* {teacher.languages?.map((item: { item: string }) => `${item} `)} */}
+            {teacher.languages?.map((item: string) => `${item} `)}
           </div>
         </div>
       </div>
