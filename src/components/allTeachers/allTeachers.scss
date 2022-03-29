@@ -18,17 +18,21 @@
       text-decoration: none;
     }
   }
-  &__button {
-    margin: 70px;
-    background-color: rgb(112, 82, 82);
-    width: 120px;
+  &__about {
+    margin-bottom: 20px;
+    background-color: rgb(41, 87, 56);
+    width: 70px;
     border-radius: 10px;
     cursor: pointer;
     color: white;
-    padding: 10px;
+    padding: 5px;
   }
-  &__about-me {
-    background-color: rgb(24, 7, 7);
+  &__button {
+    padding: 60px;
+  }
+
+  &__button button {
+    background-color: rgb(112, 82, 82);
     width: 120px;
     border-radius: 10px;
     cursor: pointer;

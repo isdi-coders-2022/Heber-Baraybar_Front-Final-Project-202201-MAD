@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import { teacherI } from '../../iterface/interfaces';
 import { loginTeacher } from '../../redux/actions/action-teacher/action-creators-teachers';
 import { registerTeacher } from '../../services/api';
-// import { app } from '../../firebase/fileUpload';
+import { app } from '../../firebase/fileUpload';
 import './teacher.register.scss';
 
 function teacherRegister(): JSX.Element {
@@ -21,8 +21,8 @@ function teacherRegister(): JSX.Element {
     comment: '',
     password: '',
   };
-  // const storage = getStorage(app);
-  // const [image, setImage] = useState<any>(null);
+  const storage = getStorage(app);
+  const [image, setImage] = useState<any>(null);
   const [formState, setFormState] = useState(initialState);
   const dispatch = useDispatch();
 
@@ -36,18 +36,18 @@ function teacherRegister(): JSX.Element {
       setFormState({ ...formState, [ev.target.name]: ev.target.value });
     }
   }
-  function handleSubmit(ev: any) {
+  async function handleSubmit(ev: any) {
     ev.preventDefault();
-    // let url = '';
-    // const imageRef = ref(storage, image.name);
-    // await uploadBytes(imageRef, image);
-    // url = await getDownloadURL(imageRef);
-    // console.log(url);
-    // setFormState({
-    //   ...formState,
-    //   image: url,
-    //   [ev.target.image]: ev.target.value,
-    // });
+    let url = '';
+    const imageRef = ref(storage, image.name);
+    await uploadBytes(imageRef, image);
+    url = await getDownloadURL(imageRef);
+    console.log(url);
+    setFormState({
+      ...formState,
+      image: url,
+      [ev.target.image]: ev.target.value,
+    });
 
     registerTeacher(formState).then((resp) => {
       console.log(resp);
@@ -74,6 +74,7 @@ function teacherRegister(): JSX.Element {
         onChange={handleChange}
       />
       <select
+        className="form-register-teacher__country"
         name="country"
         value={formState.country}
         onChange={handleChange}
@@ -94,16 +95,9 @@ function teacherRegister(): JSX.Element {
         onChange={handleChange}
         required
       />
-      {/* <input
-        type="text"
-        name="country"
-        placeholder="  where country are you from"
-        value={formState.country}
-        onChange={handleChange}
-        required
-      /> */}
 
       <select
+        className="form-register-teacher__languages"
         name="languages"
         value={formState.languages}
         onChange={handleChange}
@@ -116,14 +110,7 @@ function teacherRegister(): JSX.Element {
         <option value="French">French</option>
         <option value="Italian">Italian</option>
       </select>
-      {/* <input
-        type="text"
-        name="languages"
-        placeholder="  what languages do you speak?"
-        value={formState.languages}
-        onChange={handleChange}
-        required
-      /> */}
+
       <input
         type="text"
         name="speciality"
@@ -158,14 +145,19 @@ function teacherRegister(): JSX.Element {
         required
       />
       <input
-        type="text"
-        // onChange={(e: any) => setImage(e.target.files[0])}
+        type="file"
+        onChange={(e: any) => setImage(e.target.files[0])}
         name="image"
         placeholder="  photo"
-        value={formState.image}
-        onChange={handleChange}
         required
       />
+      {/* <input
+        type="file"
+        onChange={(e: any) => setImage(e.target.files[0])}
+        name="video"
+        placeholder="  video"
+        required
+      /> */}
       <button type="submit">SUBMIT</button>
     </form>
   );

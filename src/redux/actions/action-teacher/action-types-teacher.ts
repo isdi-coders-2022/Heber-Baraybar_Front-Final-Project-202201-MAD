@@ -1,5 +1,5 @@
 export interface ActionTypes {
-  login: string;
+  loginTeacher: string;
   logout: string;
   registerTeacher: string;
   updateTeacher: string;
@@ -8,7 +8,7 @@ export interface ActionTypes {
 }
 
 const actionTypesTeacher: ActionTypes = {
-  login: '@user/login',
+  loginTeacher: '@user/loginteacher',
   logout: '@userTeacher/logout',
   registerTeacher: '@userTeacher/registerTeacher',
   updateTeacher: '@userTeacher/updateTeacher',

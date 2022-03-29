@@ -2,7 +2,7 @@ import { actionI } from '../../../iterface/interfaces';
 import actionTypesTeacher from './action-types-teacher';
 
 export const loginTeacher = (user: object): actionI => ({
-  type: actionTypesTeacher.login,
+  type: actionTypesTeacher.loginTeacher,
   payload: user,
 });
 

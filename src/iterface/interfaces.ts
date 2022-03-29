@@ -9,6 +9,7 @@ export interface studentI {
   comment: string;
   password: string;
 }
+
 export interface teacherI {
   name: string;
   email: string;
@@ -23,6 +24,7 @@ export interface teacherI {
   password: string;
   _id: string;
 }
+
 export interface loginStudentI {
   name: string;
   password: string;
