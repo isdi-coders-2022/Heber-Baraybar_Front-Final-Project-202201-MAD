@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import { studentI } from '../../iterface/interfaces';
 import { login } from '../../redux/actions/action-student/action-creators-student';
 import { registerStudent } from '../../services/api';
+import { app } from '../../firebase/fileUpload';
 import './student.register.scss';
 
 function StudentRegister(): JSX.Element {
@@ -17,6 +19,8 @@ function StudentRegister(): JSX.Element {
   };
 
   const [formState, setFormState] = useState(initialState);
+  const storage = getStorage(app);
+  const [image, setImage] = useState<any>(null);
 
   const dispatch = useDispatch();
 
@@ -31,8 +35,18 @@ function StudentRegister(): JSX.Element {
     }
   }
 
-  function handleSubmit(ev: any) {
+  async function handleSubmit(ev: any) {
     ev.preventDefault();
+    let url = '';
+    const imageRef = ref(storage, image.name);
+    await uploadBytes(imageRef, image);
+    url = await getDownloadURL(imageRef);
+    console.log(url);
+    setFormState({
+      ...formState,
+      image: url,
+      [ev.target.image]: ev.target.value,
+    });
     registerStudent(formState).then((resp) => {
       console.log(resp);
 
@@ -65,21 +79,14 @@ function StudentRegister(): JSX.Element {
         onChange={handleChange}
         required
       >
-        <option value="">select your country</option>
+        {/* <option value="">select your country</option> */}
         <option value="Spain">Spain</option>
         <option value="United States">United States</option>
         <option value="China">China</option>
         <option value="India">India</option>
         <option value="Italy">Italy</option>
       </select>
-      {/* <input
-        type="text"
-        name="country"
-        placeholder="  where country are you from"
-        value={formState.country}
-        onChange={handleChange}
-        required
-      /> */}
+
       <input
         type="text"
         name="city"
@@ -101,14 +108,7 @@ function StudentRegister(): JSX.Element {
         <option value="French">French</option>
         <option value="Italian">Italian</option>
       </select>
-      {/* <input
-        type="text"
-        name="languages"
-        placeholder="  what languages do you speak?"
-        value={formState.languages}
-        onChange={handleChange}
-        required
-      /> */}
+
       <textarea
         name="comment"
         placeholder="  tell us something about yourself"
@@ -124,6 +124,14 @@ function StudentRegister(): JSX.Element {
         onChange={handleChange}
         required
       />
+      <input
+        type="file"
+        onChange={(e: any) => setImage(e.target.files[0])}
+        name="image"
+        placeholder="  photo"
+        required
+      />
+
       <button type="submit">SUBMIT</button>
     </form>
   );

@@ -151,6 +151,13 @@ function teacherRegister(): JSX.Element {
         placeholder="  photo"
         required
       />
+      {/* <input
+        type="file"
+        onChange={(e: any) => setImage(e.target.files[0])}
+        name="video"
+        placeholder="  video"
+        required
+      /> */}
       <button type="submit">SUBMIT</button>
     </form>
   );

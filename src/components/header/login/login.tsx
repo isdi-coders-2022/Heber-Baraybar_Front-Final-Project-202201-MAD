@@ -15,7 +15,6 @@ function Login() {
   const isLoggedStudent = useSelector((state: RootState) => state.student);
 
   const isLoggedTeacher = useSelector((state: RootState) => state.teacher);
-  console.log('este es mi selector', isLoggedStudent);
 
   const [useForm, setUserForm] = useState<loginStudentI>({
     name: '',
@@ -47,6 +46,14 @@ function Login() {
     } catch (error) {
       console.log(error);
     }
+    setTeacherForm({
+      name: '',
+      password: '',
+    });
+    setUserForm({
+      name: '',
+      password: '',
+    });
   }
 
   async function handleSubmitTeacher() {
